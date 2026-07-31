@@ -82,9 +82,10 @@ email has an account, always with that tenant's own permission set.
 
 ## Notes
 
-- Every tool is read-only except `rewrite_bsr_variants`, which generates
-  content. Even that one mutates no dashboard state; its only side effect is
-  warming the content cache that serves visitor-facing swaps.
+- Most tools are read-only. `lookup_postcode_bsr_segment` is a metered public
+  API lookup that can record usage credits, and `rewrite_bsr_variants`
+  generates content variants and can warm the visitor-facing content cache.
+  Neither performs destructive admin actions.
 - Ranges use Europe/Amsterdam calendar days.
 - BSR colors (bsr4 pack): rood = vrijheid, groen = veiligheid, blauw =
   controle, geel = harmonie. Larger packs (bsr8, bsr7lei) return their own

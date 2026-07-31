@@ -1,12 +1,12 @@
 # Bluestars agent skill & plugins
 
-Connect Claude, ChatGPT, Microsoft 365 Copilot — or any MCP client — to a
+Connect Claude, ChatGPT, Microsoft 365 Copilot (or any MCP client) to a
 **Bluestars** customer dashboard: conversation analytics, usage/billing, BSR
 customer & visitor segmentation insights, and the public BSR API.
 
 > This repository is generated and published automatically from
 > [`bluestars-org/bluestars`](https://github.com/bluestars-org/bluestars)
-> (`apps/sdk/plugin`). Do not edit it by hand — changes are overwritten on the
+> (`apps/sdk/plugin`). Do not edit it by hand: changes are overwritten on the
 > next release.
 
 ## Install the skill (`npx skills add`)
@@ -16,7 +16,7 @@ npx skills add bluestars-org/bluestars-skill
 ```
 
 This installs the shared `SKILL.md` (Agent Skills open standard) into any agent
-that supports it — Claude Code, Cursor, Codex, Gemini CLI, and others.
+that supports it: Claude Code, Cursor, Codex, Gemini CLI, and others.
 
 ## Install a platform plugin
 
@@ -24,15 +24,29 @@ Each folder under [`plugins/`](./plugins) is a ready-to-install bundle that
 also wires up the Bluestars **MCP server** (`https://bluestars.app/api/mcp`,
 OAuth 2.1 with CIMD + Dynamic Client Registration):
 
-- [`plugins/claude`](./plugins/claude) — Claude Code / claude.ai plugin
+- [`plugins/claude`](./plugins/claude): Claude Code / claude.ai plugin
   (`.claude-plugin` + `.mcp.json` + skill). Test locally with
   `claude --plugin-dir plugins/claude`.
-- [`plugins/chatgpt`](./plugins/chatgpt) — ChatGPT Apps/Codex plugin
+- [`plugins/chatgpt`](./plugins/chatgpt): ChatGPT Apps/Codex plugin
   (`.codex-plugin` + `.mcp.json` + skill).
-- [`plugins/copilot`](./plugins/copilot) — Microsoft 365 Copilot Cowork
+- [`plugins/copilot`](./plugins/copilot): Microsoft 365 Copilot Cowork
   bundle (`manifest.json` with a DCR MCP connector + skill).
 
 On first use you authenticate with your Bluestars dashboard account (magic
 link) and approve access; the token carries exactly your dashboard permissions.
+
+## ChatGPT app / connector publishing
+
+The public ChatGPT path is a platform submission, not a local plugin share link.
+Test `https://bluestars.app/api/mcp` in ChatGPT developer mode, then submit it as a
+Universal MCP server at <https://platform.openai.com/plugins>. The portal scans
+the production MCP server, collects listing metadata, bundled skills, starter
+prompts and reviewer tests, and after approval you publish the version into the
+universal Plugins Directory shared by ChatGPT and Codex.
+
+If OpenAI asks for domain verification, set `OPENAI_APPS_CHALLENGE` on the
+`bluestars.app` deployment and verify that
+`https://bluestars.app/.well-known/openai-apps-challenge` returns the exact
+token as plain text.
 
 Version: see [`VERSION`](./VERSION).
