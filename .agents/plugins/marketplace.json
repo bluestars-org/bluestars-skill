@@ -1,0 +1,20 @@
+{
+  "name": "bluestars",
+  "interface": {
+    "displayName": "Bluestars"
+  },
+  "plugins": [
+    {
+      "name": "bluestars",
+      "source": {
+        "source": "local",
+        "path": "./plugins/chatgpt"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

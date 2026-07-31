@@ -9,6 +9,23 @@ customer & visitor segmentation insights, and the public BSR API.
 > (`apps/sdk/plugin`). Do not edit it by hand: changes are overwritten on the
 > next release.
 
+## Install in Claude Code (plugin marketplace)
+
+```bash
+claude
+/plugin marketplace add bluestars-org/bluestars-skill
+/plugin install bluestars@bluestars
+```
+
+This wires up the MCP server AND installs the skill in one step.
+
+## Install in Codex (plugin marketplace)
+
+```bash
+codex plugin marketplace add bluestars-org/bluestars-skill
+codex plugin add bluestars@bluestars
+```
+
 ## Install the skill (`npx skills add`)
 
 ```bash

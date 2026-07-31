@@ -1,0 +1,19 @@
+{
+  "name": "bluestars",
+  "owner": {
+    "name": "Bluestars",
+    "url": "https://bluestars.nl"
+  },
+  "plugins": [
+    {
+      "name": "bluestars",
+      "source": "./plugins/claude",
+      "description": "Read your Bluestars dashboard from your AI assistant: conversation analytics, usage, BSR customer & visitor segmentation insights and the public BSR API.",
+      "version": "1.0.1",
+      "author": {
+        "name": "Bluestars"
+      },
+      "homepage": "https://bluestars.nl"
+    }
+  ]
+}
