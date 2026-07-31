@@ -1,9 +1,9 @@
 {
   "name": "bluestars",
   "description": "Read your Bluestars dashboard from your AI assistant: conversation analytics, usage, BSR customer & visitor segmentation insights and the public BSR API.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Bluestars"
   },
-  "homepage": "https://bluestars.app"
+  "homepage": "https://bluestars.nl"
 }

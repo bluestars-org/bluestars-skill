@@ -1,6 +1,12 @@
 ---
 name: bluestars
-description: Work with a Bluestars customer dashboard through the Bluestars MCP server: conversation analytics, usage/billing, BSR customer & visitor segmentation insights, postcode-to-segment lookups, BSR color-variant rewriting of copy, and the public REST API. Use when the user asks about their Bluestars data, widget conversations, BSR segments/personas, campaign results, rewriting copy per BSR segment, or Bluestars API usage.
+description: >-
+  Work with a Bluestars customer dashboard through the Bluestars MCP server:
+  conversation analytics, usage/billing, BSR customer & visitor segmentation
+  insights, postcode-to-segment lookups, BSR color-variant rewriting of copy,
+  and the public REST API. Use when the user asks about their Bluestars data,
+  widget conversations, BSR segments/personas, campaign results, rewriting copy
+  per BSR segment, or Bluestars API usage.
 ---
 
 <!-- GENERATED FILE, do not edit plugin/SKILL.md directly.

@@ -1,9 +1,35 @@
 {
   "name": "bluestars",
   "description": "Read your Bluestars dashboard from your AI assistant: conversation analytics, usage, BSR customer & visitor segmentation insights and the public BSR API.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Bluestars"
   },
-  "homepage": "https://bluestars.app"
+  "homepage": "https://bluestars.nl",
+  "repository": "https://github.com/bluestars-org/bluestars-skill",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Bluestars",
+    "shortDescription": "Connect Bluestars dashboard analytics and BSR insights to your AI assistant.",
+    "longDescription": "Use Bluestars MCP tools to inspect dashboard performance, usage, conversations, BSR customer and visitor insights, postcode segmentation, widget install snippets, and API integration details from the permissions on your Bluestars account.",
+    "developerName": "Bluestars",
+    "category": "Productivity",
+    "capabilities": [
+      "MCP",
+      "Analytics",
+      "Business Intelligence"
+    ],
+    "websiteURL": "https://bluestars.nl",
+    "privacyPolicyURL": "https://bluestars.nl/privacy/",
+    "termsOfServiceURL": "https://bluestars.nl/voorwaarden/",
+    "defaultPrompt": [
+      "Show my Bluestars account overview.",
+      "Summarize recent assistant performance.",
+      "Compare customer and visitor BSR insights."
+    ],
+    "brandColor": "#26C0DD",
+    "composerIcon": "./assets/favicon.png",
+    "logo": "./assets/favicon.png"
+  }
 }
