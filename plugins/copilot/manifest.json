@@ -1,0 +1,23 @@
+{
+  "name": "Bluestars",
+  "version": "1.0.0",
+  "description": "Read your Bluestars dashboard from your AI assistant: conversation analytics, usage, BSR customer & visitor segmentation insights and the public BSR API.",
+  "agentSkills": [
+    "skills/bluestars"
+  ],
+  "agentConnectors": [
+    {
+      "id": "bluestars",
+      "displayName": "Bluestars",
+      "description": "Read your Bluestars dashboard from your AI assistant: conversation analytics, usage, BSR customer & visitor segmentation insights and the public BSR API.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "https://bluestars.app/api/mcp",
+          "authorization": {
+            "type": "DynamicClientRegistration"
+          }
+        }
+      }
+    }
+  ]
+}

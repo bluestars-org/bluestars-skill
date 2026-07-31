@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "bluestars": {
+      "type": "http",
+      "url": "https://bluestars.app/api/mcp"
+    }
+  }
+}
