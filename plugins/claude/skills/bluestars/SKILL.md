@@ -38,23 +38,35 @@ tenant has a public API key provisioned.
 
 ## Tools
 
-| Tool                          | What it returns                                                                                                                       | Needs section |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `get_account_info`            | Tenant, user, accessible sections, API-key status                                                                                     | none          |
-| `list_tenants`                | Every tenant this login can act on (multi-tenant users & admins)                                                                      | none          |
-| `get_dashboard_stats`         | KPIs: conversations, surveys, visitors, opens, BSR donut, daily series                                                                | analytics     |
-| `get_usage_summary`           | Plan tier, credits used/available, seats, API add-on usage                                                                            | none          |
-| `list_conversations`          | Paginated widget conversations with counts + first message                                                                            | analytics     |
-| `get_conversation`            | Full transcript of one conversation                                                                                                   | analytics     |
-| `get_bsr_customer_insights`   | BSR distribution + socio-demographics of the customer's own base (postcode upload)                                                    | insights      |
-| `get_bsr_visitor_insights`    | BSR distribution + socio-demographics of website visitors                                                                             | insights      |
-| `get_bsr_report`              | Latest AI-generated BSR report (markdown)                                                                                             | insights      |
-| `lookup_postcode_bsr_segment` | Dutch postcode(s) → BSR segment via the public API (metered on the tenant's API key)                                                  | insights      |
-| `get_public_api_info`         | Base URL, auth and endpoint map of the public REST API                                                                                | none          |
-| `get_widget_install_snippet`  | Widget embed snippet to add to the site (plain <script> + a GTM/document.write variant)                                               | none          |
-| `generate_content`            | Write web copy per BSR segment or a blog article, from the customer's pages or from a brief (needs studio EDIT rights + mcp:write)    | studio        |
-| `generate_email`              | Write an email per BSR segment (subjects, preheaders, body, CTA, hero brief, attributed links) (needs studio EDIT rights + mcp:write) | studio        |
-| `rewrite_bsr_variants`        | Rewrite copy into a variant per BSR segment of the active pack (needs studio EDIT rights + mcp:write)                                 | studio        |
+| Tool                          | What it returns                                                                                                                                                   | Needs section |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `get_account_info`            | Tenant, user, accessible sections, API-key status                                                                                                                 | none          |
+| `list_tenants`                | Every tenant this login can act on (multi-tenant users & admins)                                                                                                  | none          |
+| `get_dashboard_stats`         | KPIs: conversations, surveys, visitors, opens, BSR donut, daily series                                                                                            | analytics     |
+| `get_usage_summary`           | Plan tier, credits used/available, seats, API add-on usage                                                                                                        | none          |
+| `list_conversations`          | Paginated widget conversations with counts + first message                                                                                                        | analytics     |
+| `get_conversation`            | Full transcript of one conversation                                                                                                                               | analytics     |
+| `get_bsr_customer_insights`   | BSR distribution + socio-demographics of the customer's own base (postcode upload)                                                                                | insights      |
+| `get_bsr_visitor_insights`    | BSR distribution + socio-demographics of website visitors                                                                                                         | insights      |
+| `get_bsr_report`              | Latest AI-generated BSR report (markdown)                                                                                                                         | insights      |
+| `lookup_postcode_bsr_segment` | Dutch postcode(s) → BSR segment via the public API (metered on the tenant's API key)                                                                              | insights      |
+| `get_public_api_info`         | Base URL, auth and endpoint map of the public REST API                                                                                                            | none          |
+| `get_widget_install_snippet`  | Widget embed snippet to add to the site (plain <script> + a GTM/document.write variant)                                                                           | none          |
+| `generate_content`            | Write web copy per BSR segment or a blog article, from the customer's pages or from a brief (needs studio EDIT rights + mcp:write)                                | studio        |
+| `generate_email`              | Write an email per BSR segment (subjects, preheaders, body, CTA, hero brief, attributed links) (needs studio EDIT rights + mcp:write)                             | studio        |
+| `rewrite_bsr_variants`        | Rewrite copy into a variant per BSR segment of the active pack (needs studio EDIT rights + mcp:write)                                                             | studio        |
+| `generate_audience_list`      | Build a postcode-area audience list where a BSR segment dominates, optionally limited to provinces (needs studio EDIT rights + mcp:write; charges tenant credits) | studio        |
+| `get_pack_segments`           | The active pack's segments: slug, display name and color hex                                                                                                      | studio        |
+| `list_studio_records`         | Saved Studio records of one kind, with search, status filter and paging                                                                                           | studio        |
+| `get_studio_record`           | One saved Studio record in full (variants, status, sources; long payloads capped)                                                                                 | studio        |
+| `update_studio_record`        | Rename a Studio record or move it through its workflow; never deletes (needs studio EDIT rights + mcp:write)                                                      | studio        |
+| `list_site_pages`             | The tenant's crawled pages (url + title), searchable: sources for the generators                                                                                  | studio        |
+| `list_products`               | The tenant's synced product feed, searchable; ids feed generate_shopping                                                                                          | studio        |
+| `get_keywords_status`         | Whether a Google Ads keyword list is loaded for a language, and its top keywords                                                                                  | studio        |
+| `get_audience_suggestion`     | A Look-a-Like starting point from the customer upload (proposal only)                                                                                             | studio        |
+| `get_audience_vocabulary`     | The learned socio-demographic dimensions available for audience refinement                                                                                        | studio        |
+| `generate_ads`                | Write Google ad sets per page per BSR segment from the tenant's own pages (needs studio EDIT rights + mcp:write)                                                  | studio        |
+| `generate_shopping`           | Write shopping product titles per BSR segment for up to 25 synced products per call (needs studio EDIT rights + mcp:write)                                        | studio        |
 
 ## Typical workflows
 
