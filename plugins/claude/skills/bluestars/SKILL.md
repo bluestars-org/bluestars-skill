@@ -51,7 +51,7 @@ tenant has a public API key provisioned.
 | `get_bsr_report`              | Latest AI-generated BSR report (markdown)                                                                                                                         | insights      |
 | `lookup_postcode_bsr_segment` | Dutch postcode(s) → BSR segment via the public API (metered on the tenant's API key)                                                                              | insights      |
 | `get_public_api_info`         | Base URL, auth and endpoint map of the public REST API                                                                                                            | none          |
-| `get_widget_install_snippet`  | Widget embed snippet to add to the site (plain <script> + a GTM/document.write variant)                                                                           | none          |
+| `get_widget_install_snippet`  | Widget embed snippet to add to the site (plain <script> + a Google Tag Manager variant)                                                                           | none          |
 | `generate_content`            | Write web copy per BSR segment or a blog article, from the customer's pages or from a brief (needs studio EDIT rights + mcp:write)                                | studio        |
 | `generate_email`              | Write an email per BSR segment (subjects, preheaders, body, CTA, hero brief, attributed links) (needs studio EDIT rights + mcp:write)                             | studio        |
 | `rewrite_bsr_variants`        | Rewrite copy into a variant per BSR segment of the active pack (needs studio EDIT rights + mcp:write)                                                             | studio        |
