@@ -43,6 +43,7 @@ tenant has a public API key provisioned.
 | `get_account_info`            | Tenant, user, accessible sections, API-key status                                                                                                                 | none          |
 | `list_tenants`                | Every tenant this login can act on (multi-tenant users & admins)                                                                                                  | none          |
 | `get_dashboard_stats`         | KPIs: conversations, surveys, visitors, opens, BSR donut, daily series                                                                                            | analytics     |
+| `get_site_statistics`         | Traffic per funnel step and the events visitors triggered, every row split per BSR segment                                                                        | analytics     |
 | `get_usage_summary`           | Plan tier, credits used/available, seats, API add-on usage                                                                                                        | none          |
 | `list_conversations`          | Paginated widget conversations with counts + first message                                                                                                        | analytics     |
 | `get_conversation`            | Full transcript of one conversation                                                                                                                               | analytics     |
@@ -62,6 +63,13 @@ tenant has a public API key provisioned.
 - **"How is my assistant doing?"** → `get_dashboard_stats` (range `7d` or
   `30d`), then `list_conversations` for concrete examples; quote the first
   user messages, not IDs.
+- **"Which products does a segment look at or buy?"** → `get_site_statistics`.
+  The `detail` funnel step holds the product pages with their per-segment
+  split, `assistant.product_clicked` the products clicked in the assistant,
+  and `purchase_item` the ones actually bought, with revenue. Lead with the
+  `standout` segment on a row, never with the raw counts.
+- **"Where do visitors drop out?"** → `get_site_statistics` and read
+  `pageTypes` as a funnel (home → category → detail → checkout) per segment.
 - **"What do my customers look like?"** → `get_bsr_customer_insights` +
   `get_bsr_report`; compare against `get_bsr_visitor_insights` to spot gaps
   between the customer base and site traffic.
