@@ -44,6 +44,7 @@ tenant has a public API key provisioned.
 | `list_tenants`                | Every tenant this login can act on (multi-tenant users & admins)                                                                                                  | none          |
 | `get_dashboard_stats`         | KPIs: conversations, surveys, visitors, opens, BSR donut, daily series                                                                                            | analytics     |
 | `get_site_statistics`         | Traffic per funnel step and the events visitors triggered, every row split per BSR segment                                                                        | analytics     |
+| `get_google_performance`      | Traffic source, bounce rate, engagement time and campaign cost per BSR segment from the customer's linked Google accounts                                         | analytics     |
 | `get_usage_summary`           | Plan tier, credits used/available, seats, API add-on usage                                                                                                        | none          |
 | `list_conversations`          | Paginated widget conversations with counts + first message                                                                                                        | analytics     |
 | `get_conversation`            | Full transcript of one conversation                                                                                                                               | analytics     |
@@ -70,6 +71,14 @@ tenant has a public API key provisioned.
   `standout` segment on a row, never with the raw counts.
 - **"Where do visitors drop out?"** → `get_site_statistics` and read
   `pageTypes` as a funnel (home → category → detail → checkout) per segment.
+- **"Where does a segment come from, how engaged is it, what does it cost to
+  reach?"** → `get_google_performance`: the customer's own Google Analytics
+  (channel and source with sessions, bounce rate and engagement time per
+  segment) and Google Ads (campaign cost, CPC and conversions per segment).
+  Check `connected` first; when an account is not linked, point the user to
+  Settings > Google Analytics and Google Ads instead of guessing. A segment
+  row counts the sessions in which that segment was measured, so the
+  segments never add up to `all`.
 - **"What do my customers look like?"** → `get_bsr_customer_insights` +
   `get_bsr_report`; compare against `get_bsr_visitor_insights` to spot gaps
   between the customer base and site traffic.
