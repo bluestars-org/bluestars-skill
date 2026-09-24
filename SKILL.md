@@ -43,7 +43,7 @@ tenant has a public API key provisioned.
 | `get_account_info`            | Tenant, user, accessible sections, API-key status                                                                                                                 | none          |
 | `list_tenants`                | Every tenant this login can act on (multi-tenant users & admins)                                                                                                  | none          |
 | `get_dashboard_stats`         | KPIs: conversations, surveys, visitors, opens, BSR donut, daily series                                                                                            | analytics     |
-| `get_site_statistics`         | Traffic per funnel step and the events visitors triggered, every row split per BSR segment                                                                        | analytics     |
+| `get_site_statistics`         | Traffic per funnel step, the events visitors triggered and the conversion rate per BSR segment, every row split per segment                                       | analytics     |
 | `get_google_performance`      | Traffic source, bounce rate, engagement time and campaign cost per BSR segment from the customer's linked Google accounts                                         | analytics     |
 | `get_usage_summary`           | Plan tier, credits used/available, seats, API add-on usage                                                                                                        | none          |
 | `list_conversations`          | Paginated widget conversations with counts + first message                                                                                                        | analytics     |
@@ -79,6 +79,14 @@ tenant has a public API key provisioned.
   Settings > Google Analytics and Google Ads instead of guessing. A segment
   row counts the sessions in which that segment was measured, so the
   segments never add up to `all`.
+- **"What is the conversion per segment?"** → `get_site_statistics` and read
+  `conversions`: per goal the site's conversion rate and per segment its own
+  rate with an index against the site (1.2 = converts 20% better). Answer
+  with those rates, one line per segment, the site rate next to them; a rate
+  marked `thin` is noise, not a difference. Segment splits on every row are
+  shares of the recognised visitors, the dashboard's own basis: report
+  percentages, never counts, and never state or estimate how many visitors
+  were or were not recognised.
 - **"What do my customers look like?"** → `get_bsr_customer_insights` +
   `get_bsr_report`; compare against `get_bsr_visitor_insights` to spot gaps
   between the customer base and site traffic.
