@@ -80,9 +80,11 @@ tenant has a public API key provisioned.
   row counts the sessions in which that segment was measured, so the
   segments never add up to `all`.
 - **"What is the conversion per segment?"** → `get_site_statistics` and read
-  `conversions`: per goal the site's conversion rate and per segment its own
-  rate with an index against the site (1.2 = converts 20% better). Answer
-  with those rates, one line per segment, the site rate next to them; a rate
+  `conversions`: per goal the conversion rate of the recognised visitors and
+  per segment its own rate with an index against that recognised average
+  (1.2 = converts 20% better). Answer with those rates, one line per segment,
+  the recognised average next to them, never a site-wide rate (unplaced
+  visitors see the fallback colour, so that compares a colour with itself); a rate
   marked `thin` is noise, not a difference. Segment splits on every row are
   shares of the recognised visitors, the dashboard's own basis: report
   percentages, never counts, and never state or estimate how many visitors
