@@ -43,7 +43,7 @@ tenant has a public API key provisioned.
 | `get_account_info`            | Tenant, user, accessible sections, API-key status                                                                                                                 | none          |
 | `list_tenants`                | Every tenant this login can act on (multi-tenant users & admins)                                                                                                  | none          |
 | `get_dashboard_stats`         | KPIs: conversations, surveys, visitors, opens, BSR donut, daily series                                                                                            | analytics     |
-| `get_site_statistics`         | Traffic per funnel step, the events visitors triggered and the conversion rate per BSR segment, every row split per segment                                       | analytics     |
+| `get_site_statistics`         | Traffic per funnel step, traffic sources, the events visitors triggered and the conversion rate per BSR segment, every row split per segment                      | analytics     |
 | `get_google_performance`      | Traffic source, bounce rate, engagement time and campaign cost per BSR segment from the customer's linked Google accounts                                         | analytics     |
 | `get_usage_summary`           | Plan tier, credits used/available, seats, API add-on usage                                                                                                        | none          |
 | `list_conversations`          | Paginated widget conversations with counts + first message                                                                                                        | analytics     |
