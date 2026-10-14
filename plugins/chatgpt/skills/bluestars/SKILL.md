@@ -57,7 +57,16 @@ tenant has a public API key provisioned.
 | `generate_email`              | Write an email per BSR segment (subjects, preheaders, body, CTA, hero brief, attributed links) (needs studio EDIT rights + mcp:write)                                                                 | studio        |
 | `rewrite_bsr_variants`        | Rewrite copy into a variant per BSR segment of the active pack (needs studio EDIT rights + mcp:write)                                                                                                 | studio        |
 | `generate_audience_list`      | Build a postcode-area audience list where a BSR segment dominates, optionally limited to provinces (needs studio EDIT rights + mcp:write; charges tenant credits)                                     | studio        |
+| `get_started`                 | Who you are on this account, its plan, and the setup checklist with the next step (call this first)                                                                                                   | none          |
+| `set_website`                 | Store the account's website address (team managers)                                                                                                                                                   | none          |
+| `set_site_type`               | Say whether the site sells online; a site that does not skips the customer-data step                                                                                                                  | insights      |
 | `get_widget_install_snippet`  | Widget embed snippet to add to the site (plain <script> + a Google Tag Manager variant)                                                                                                               | none          |
+| `check_script_install`        | Check the website's homepage for this account's measurement script                                                                                                                                    | insights      |
+| `upload_customer_data`        | Upload the customer's postcodes (and optionally products, amounts, dates) as CSV in chunks: start, chunk, preview, finalize                                                                           | insights      |
+| `get_site_languages`          | The languages of the website, and with detect a suggestion read off the site                                                                                                                          | none          |
+| `confirm_site_languages`      | Confirm the website's languages: the main language and each language's home address (team managers)                                                                                                   | none          |
+| `connect_google`              | Store the Google Analytics property id and/or Google Ads customer id, and get the steps to give Bluestars read access (team managers, paid plan)                                                      | analytics     |
+| `check_google_access`         | Check that Bluestars can read the connected Google Analytics property and Ads account                                                                                                                 | analytics     |
 
 ## Typical workflows
 
