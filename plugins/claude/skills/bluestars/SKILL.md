@@ -73,6 +73,7 @@ tenant has a public API key provisioned.
 | `save_knowledge`              | Create a knowledge entry, or update one with base_version (asks the user first; needs edit rights on the knowledge bank)                                                                              | none          |
 | `add_knowledge_reference`     | Attach a web page to a knowledge entry (its text is stored with it)                                                                                                                                   | none          |
 | `archive_knowledge_entry`     | Archive an entry (soft: its history stays; ask the user first)                                                                                                                                        | none          |
+| `restore_knowledge_entry`     | Bring back an archived entry, or the content of an earlier version (ask the user first)                                                                                                               | none          |
 
 ## Typical workflows
 
