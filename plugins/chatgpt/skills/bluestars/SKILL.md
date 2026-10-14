@@ -67,6 +67,12 @@ tenant has a public API key provisioned.
 | `confirm_site_languages`      | Confirm the website's languages: the main language and each language's home address (team managers)                                                                                                   | none          |
 | `connect_google`              | Store the Google Analytics property id and/or Google Ads customer id, and get the steps to give Bluestars read access (team managers, paid plan)                                                      | analytics     |
 | `check_google_access`         | Check that Bluestars can read the connected Google Analytics property and Ads account                                                                                                                 | analytics     |
+| `list_knowledge_banks`        | The account's own knowledge bank and the shared banks it was granted                                                                                                                                  | none          |
+| `search_knowledge`            | Search the knowledge bank by text, type, tag or bank                                                                                                                                                  | none          |
+| `get_knowledge_entry`         | One entry in full: body, references and version history                                                                                                                                               | none          |
+| `save_knowledge`              | Create a knowledge entry, or update one with base_version (asks the user first; needs edit rights on the knowledge bank)                                                                              | none          |
+| `add_knowledge_reference`     | Attach a web page to a knowledge entry (its text is stored with it)                                                                                                                                   | none          |
+| `archive_knowledge_entry`     | Archive an entry (soft: its history stays; ask the user first)                                                                                                                                        | none          |
 
 ## Typical workflows
 
