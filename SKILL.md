@@ -79,6 +79,14 @@ tenant has a public API key provisioned.
 | `get_brand_guidelines_instructions` | How to condense brand sources into the brand guidelines (before update_brand_guidelines)                                                                                                              | none          |
 | `update_brand_guidelines`           | Save a new version of the brand guidelines (asks the user first; needs the brand right)                                                                                                               | none          |
 | `get_content_instructions`          | How to write a piece of content for this account, per BSR segment: call it for EVERY piece, send the etag                                                                                             | none          |
+| `save_to_library`                   | Save what you wrote with get_content_instructions: a new item, or a new version with item_id + base_version                                                                                           | none          |
+| `search_library`                    | Find saved content by text, type, category, external id, segment or author                                                                                                                            | none          |
+| `get_library_item`                  | One saved piece: every variant, its audit and its versions                                                                                                                                            | none          |
+| `update_library_item`               | Change an item's title, categories, status or external id (never its content)                                                                                                                         | none          |
+| `archive_library_item`              | Archive an item (soft: its history stays; ask the user first)                                                                                                                                         | none          |
+| `list_content_categories`           | The account's own categories for its content (campaigns, product lines, topics)                                                                                                                       | none          |
+| `create_content_category`           | Add a category the user agreed to (ask first)                                                                                                                                                         | none          |
+| `update_content_category`           | Rename, re-parent or archive a category                                                                                                                                                               | none          |
 
 ## Typical workflows
 
