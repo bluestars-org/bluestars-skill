@@ -10,7 +10,8 @@ description: >-
 ---
 
 <!-- GENERATED FILE, do not edit plugin/SKILL.md directly.
-     Source: plugin/SKILL.template.md + src/lib/mcp/tool-catalog.ts.
+     Source: plugin/SKILL.template.md + src/lib/mcp/tool-catalog.ts
+     + src/lib/content-platform/guidance/flows.ts.
      Regenerate: npm run generate-skill -w bs-sdk (runs in build:plugins too). -->
 
 # Bluestars
@@ -32,9 +33,24 @@ you cannot see in the dashboard return a permission error.
 
 ## Orientation
 
-Always call `get_account_info` first. It returns the tenant (customer
-account) the session is scoped to, your accessible sections, and whether the
-tenant has a public API key provisioned.
+Always call `get_started` first. It returns who you are on the account, its
+plan, the setup checklist with the next step, and the flows the account can
+use. Lead the user through any open setup step before anything else.
+`get_account_info` adds the sections you can see and whether the tenant has a
+public API key provisioned.
+
+## Flows
+
+Each flow is also an MCP prompt (a slash command in clients that show them),
+and `get_workflow_guide` returns its steps.
+
+- **`onboarding`**: Work through the open setup steps with the user, one at a time, explaining why each matters. (`get_started`, `set_website`, `set_site_type`, `get_widget_install_snippet`, `check_script_install`, `upload_customer_data`, `get_site_languages`, `confirm_site_languages`, `connect_google`, `check_google_access`)
+- **`brand_setup`**: Collect the brand's own material, condense it into the guidelines every piece of content follows. (`save_knowledge`, `add_knowledge_reference`, `get_brand_guidelines_instructions`, `update_brand_guidelines`, `get_brand_guidelines`)
+- **`create_content`**: Write one piece per BSR segment with Bluestars' instructions, and save it to the library. (`get_content_instructions`, `get_library_item`, `save_to_library`)
+- **`bulk_content`**: The create_content flow in a loop, for a list of products, pages or campaigns. (`get_content_instructions`, `save_to_library`)
+- **`update_content`**: Find a piece in the library and write a new version of it. (`search_library`, `get_library_item`, `get_content_instructions`, `save_to_library`, `update_library_item`, `archive_library_item`)
+- **`capture_knowledge`**: When the user states something reusable (a rule, a fact, a decision), offer to save it. (`search_knowledge`, `save_knowledge`, `get_knowledge_entry`, `archive_knowledge_entry`)
+- **`use_global_knowledge`**: Look things up in the knowledge banks Bluestars shared with this account. (`list_knowledge_banks`, `search_knowledge`)
 
 ## Tools
 
@@ -58,6 +74,7 @@ tenant has a public API key provisioned.
 | `rewrite_bsr_variants`              | Rewrite copy into a variant per BSR segment of the active pack (needs studio EDIT rights + mcp:write)                                                                                                 | studio        |
 | `generate_audience_list`            | Build a postcode-area audience list where a BSR segment dominates, optionally limited to provinces (needs studio EDIT rights + mcp:write; charges tenant credits)                                     | studio        |
 | `get_started`                       | Who you are on this account, its plan, and the setup checklist with the next step (call this first)                                                                                                   | none          |
+| `get_workflow_guide`                | The steps of a flow (onboarding, brand_setup, create_content, ...), in order                                                                                                                          | none          |
 | `set_website`                       | Store the account's website address (team managers)                                                                                                                                                   | none          |
 | `set_site_type`                     | Say whether the site sells online; a site that does not skips the customer-data step                                                                                                                  | insights      |
 | `get_widget_install_snippet`        | Widget embed snippet to add to the site (plain <script> + a Google Tag Manager variant)                                                                                                               | none          |
