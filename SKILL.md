@@ -78,6 +78,7 @@ tenant has a public API key provisioned.
 | `get_brand_guidelines`              | The account's brand guidelines: the brand prompt every assistant follows                                                                                                                              | none          |
 | `get_brand_guidelines_instructions` | How to condense brand sources into the brand guidelines (before update_brand_guidelines)                                                                                                              | none          |
 | `update_brand_guidelines`           | Save a new version of the brand guidelines (asks the user first; needs the brand right)                                                                                                               | none          |
+| `get_content_instructions`          | How to write a piece of content for this account, per BSR segment: call it for EVERY piece, send the etag                                                                                             | none          |
 
 ## Typical workflows
 
