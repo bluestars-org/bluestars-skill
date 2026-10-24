@@ -55,11 +55,12 @@ link) and approve access; the token carries exactly your dashboard permissions.
 ## ChatGPT app / connector publishing
 
 The public ChatGPT path is a platform submission, not a local plugin share link.
-Test `https://bluestars.app/api/mcp` in ChatGPT developer mode, then submit it as a
-Universal MCP server at <https://platform.openai.com/plugins>. The portal scans
-the production MCP server, collects listing metadata, bundled skills, starter
-prompts and reviewer tests, and after approval you publish the version into the
-universal Plugins Directory shared by ChatGPT and Codex.
+Test `https://bluestars.app/api/mcp` in ChatGPT developer mode. Maintainers build the
+complete upload ZIP with `npm run build:plugins -w bs-sdk` in the source repo;
+see [the submission guide](https://github.com/bluestars-org/bluestars/blob/main/apps/sdk/plugin/CHATGPT_SUBMISSION.md).
+Upload that ZIP at <https://platform.openai.com/plugins>, connect the MCP server
+using OAuth, review the tool scan, and submit. After approval, publish the version
+into the universal Plugins Directory shared by ChatGPT and Codex.
 
 If OpenAI asks for domain verification, set `OPENAI_APPS_CHALLENGE` on the
 `bluestars.app` deployment and verify that
