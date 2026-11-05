@@ -120,6 +120,10 @@ and `get_workflow_guide` returns its steps.
 | `list_content_categories`           | The account's own categories for its content (campaigns, product lines, topics)                                                                                                                       | none          |
 | `create_content_category`           | Add a category the user agreed to (ask first)                                                                                                                                                         | none          |
 | `update_content_category`           | Rename, re-parent or archive a category                                                                                                                                                               | none          |
+| `list_partner_customers`            | Partners: every customer account of your agency, with its setup state                                                                                                                                 | none          |
+| `create_partner_customer`           | Partners: create a new customer account under your agency                                                                                                                                             | none          |
+| `list_partner_members`              | Partner admins: who at your agency can reach your customers                                                                                                                                           | none          |
+| `manage_partner_member`             | Partner admins: invite a colleague, change a role, or remove someone                                                                                                                                  | none          |
 
 ## Typical workflows
 
